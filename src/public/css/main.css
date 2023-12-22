@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.login{
+    background-image: url('../img/img-1.jpg');
+    background-size: cover;
+}
+
+.manolo{
+    background-image: url('../img/img-1.jpg');
+    background-size: cover;
+}

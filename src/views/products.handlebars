@@ -1,0 +1,90 @@
+
+
+{{#if isValid}}
+<div class="container-fluid d-flex flex-column">
+
+    <div>
+        <h1>BIENVENIDO {{user}} </h1>
+        <h2>{{email}}</h2>
+        <h2>USUARIO</h2>
+    </div>
+
+    <span>
+        <i class="fas fa-shopping-cart fa-lg" id="carrito-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" alt="carrito"></i>
+        <span id="resultado">0</span>
+    </span>
+
+
+
+    <div class="d-flex justify-content-center flex-wrap">
+    {{#each docs}}
+        <div class="card col-md-3 m-3">
+            <div class="shadow bg-dark text-white" style="border-radius: 1rem;">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill" style="border-radius: 1rem;">
+                <div class="card-body text-center" id="{{this.id}}">
+                    <h5 class="card-title">Titulo {{this.title}}</h5>
+                    <p class="card-description">Descripcion: {{this.description}}</p>
+                    <p class="card-text">Categoria: {{this.category}}</p>
+                    <p class="card-price">Precio: {{this.price}}</p>
+                    <button class="addProduct btn btn-outline-light" type="submit">agregar al carrito</button>
+                    
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+
+<section class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Carrito de compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+            <div class="row text-center" id="carrito">
+        
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn-compra-final btn btn-primary">Finalizar compra</button>
+            <div id="total"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <div class="d-flex flex-row justify-content-center">
+    {{#if hasPrevPage}}
+    <a href={{this.prevLink}}>
+        << Anterior </a>
+            {{/if}}
+
+            {{!-- numero de pagina --}}
+            &nbsp;
+            {{this.page}}
+            &nbsp;
+
+            {{#if hasNextPage}}
+            <a href={{this.nextLink}}>
+                Siguiente >> </a>
+            {{/if}}
+    </div>
+
+</div>
+
+
+    <button id="closeAll" type="button" class="btn btn-outline-dark btn-xs ">Cerrar sesion</button>
+
+    {{else}}
+    <h1>No hay productos para mostrar</h1>
+    {{/if}}
+
+
+
+<script src="/js/logout.js"></script>

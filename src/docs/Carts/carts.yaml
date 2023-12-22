@@ -1,0 +1,247 @@
+paths:
+  /api/carts/:
+    get:
+      summary: Obtiene todos los carritos disponibles en la aplicación.
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: La operacion fue exitosa!
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Carts'
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+
+
+  /api/carts/{cidGet}:
+    get:
+      summary: Obtiene el carrito especifico segun su id.
+      tags:
+        - Obtener carrito
+      parameters:
+        - name: cidGet
+          in: path
+          required: true
+          description: Numero de id de carrito que se quiere obtener.
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+
+  /api/carts:
+    post:
+      summary: Se agrega un carrito verificando que vengan todos los datos requeridos.
+      tags:
+        - Agregar carrito
+      requestBody:
+         required: true
+         content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/PostCart'
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+
+  /api/carts/{cidPut}:
+    put:
+      summary: Se actuliza el carrito entero segun su id.
+      tags:
+        - Actualizar carrito
+      parameters:
+        - name: cidPut
+          in: path
+          required: true
+          description: Numero de id del carrito a actulizar.
+          schema:
+            $type: String  
+      requestBody:
+         required: true
+         content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/PostCart'
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+  /api/carts/{cid}/carts/{pid}:
+    put:
+      summary: Se actualiza la cantidad de un carrito en especifico segun su id.
+      tags:
+        - Actualizar cantidad de un carrito
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Id de id del carrito a actulizar.
+          schema:
+            $type: String  
+        - name: pid
+          in: path
+          required: true
+          description: Id del producto del carrito a actulizar cantidad.
+          schema:
+            $type: String   
+      requestBody:
+         required: true
+         content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/UpdateQuantity'
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+
+
+
+
+  /api/carts/{cid}/products/{pid}:
+    delete:
+      summary: Se elimina un producto en especifico de un carrito en especifico.
+      tags:
+        - Eliminar producto en especifico
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: id de carrito.
+        - name: pid
+          in: path
+          required: true
+          description: id de producto a eliminar.
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.        
+
+
+
+
+  /api/carts/{cidDelete}:
+    delete:
+      summary: Se elimina todo el contenido de un carrito en especifico.
+      tags:
+        - Eliminar carrito.
+      parameters:
+        - name: cidDelete
+          in: path
+          required: true
+          description: id de carrito para eliminar todos sus productos.
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.        
+
+  
+
+components:
+  schemas:
+    Carts:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID del carrito
+          example: "64e7a3ad8e78e05a9b1263a0"
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: object
+                description: Objeto que representa un producto
+                example: {}
+              quantity:
+                type: integer
+                description: Cantidad del producto en el carrito
+                example: 1
+          description: Listado de productos en el carrito
+          example:
+            - product: {}
+              quantity: 1
+    
+    
+
+
+  requestBodies:
+    NewCart:
+      type: object
+      required:
+       -products
+      properties:
+        products:
+          type: array
+          description: carrito vacio
+    UpdateQuantity:
+      type: object
+      properties:
+        quantity:
+          type: object
+          description: ID del producto
+          example: "7"     
+    PostCart:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: object
+                description: Objeto que representa un producto
+                example: {}
+              quantity:
+                type: integer
+                description: Cantidad del producto en el carrito
+                example: 1
+          description: Listado de productos en el carrito
+          example:
+            - product: {}
+              quantity: 1               
+        

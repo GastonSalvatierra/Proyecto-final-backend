@@ -1,0 +1,167 @@
+{"level":"error","message":"ESTO ES UN ERROR ROTUNDOOOOOOOOOOO"}
+{"level":"error","message":"ESTO ES UN ERROR ROTUNDOOOOOOOOOOO"}
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+{"level":"warning","message":"TEST DE PRUEBA PARA LOGGER --- warning"}
+{"level":"error","message":"TEST DE PRUEBA PARA LOGGER --- error "}
+{"level":"fatal","message":"TEST DE PRUEBA PARA LOGGER --- fatal"}
+{"level":"warning","message":"TEST DE PRUEBA PARA LOGGER --- warning"}
+{"level":"error","message":"TEST DE PRUEBA PARA LOGGER --- error "}
+{"level":"fatal","message":"TEST DE PRUEBA PARA LOGGER --- fatal"}
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+error: TEST DE PRUEBA PARA LOGGER --- error 
+fatal: TEST DE PRUEBA PARA LOGGER --- fatal
+
+
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+warning: Esto es un error en deleteProducts
+warning: Esto es un error en deleteProducts
+warning: Esto es un error en deleteProducts
+warning: Esto es un error en deleteProducts
+warning: Esto es un error en deleteProducts
+warning: Esto es un error en deleteProducts
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+warning: Esto es un error en deleteProducts
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+warning: Esto es un error en deleteProducts
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+warning: Esto es un error en putProducts
+warning: Esto es un error en putProducts
+error: Esto es un error en postCart
+error: Esto es un error en postCart
+error: Esto es un error en postCart
+error: Esto es un error en postCart
+error: Esto es un error en deleteCartId
+error: Esto es un error en updateProduct
+error: Esto es un error en updateProduct
+error: Esto es un error en updateProduct
+error: Esto es un error en updateProduct
+error: Esto es un error en putCartPid
+error: Esto es un error en putCartPid
+error: Esto es un error en putCartPid
+error: Esto es un error en putCartPid
+error: Esto es un error en deleteCartId
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: No tienes permisos de administrador
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+warning: Esto es un error en postProductSaveUser
+warning: Esto es un error en postProductSaveUser
+warning: Esto es un error en postProductSaveUser
+warning: Esto es un error en postProductSaveUser
+warning: Esto es un error en postProductSaveUser
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en updateProduct
+error: Esto es un error en updateProduct
+error: Esto es un error en updateProduct
+error: Esto es un error en userSession
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en confirmRole
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en deleteCartId
+error: Esto es un error en deleteCartId
+error: Esto es un error en deleteCartId
+error: Esto es un error en deleteCartId
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en confirmRole
+error: No tienes permisos de administrador
+error: Esto es un error en getCartId
+error: Esto es un error en getCartId
+error: Esto es un error en getCartId
+error: Esto es un error en getCartId

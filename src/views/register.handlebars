@@ -1,0 +1,105 @@
+{{!-- <div>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <label>Nombre</label>
+        <input name="first_name">
+        <br />
+        <label>Apellido</label>
+        <input name="last_name">
+        <br />
+        <label>Email</label>
+        <input name="email">
+        <br />
+        <label>Edad</label>
+        <input name="age">
+        <br />
+        <label>Usuario</label>
+        <input name="role" placeholder="usuario o admin">
+        <br />
+        <label>Contraseña</label>
+        <input name="password">
+        <br />
+
+        <input type="submit">
+    </form>
+    <p>Si ya tenes una cuenta: <a href="/"> Ingrese aqui</a></p>
+</div> --}}
+
+<section class="vh-100 gradient-custom">
+      <div class="container py-1 h-100">
+        <form action="" id="registerForm">
+
+          <div
+            class="row d-flex justify-content-center align-items-center h-50"
+          >
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center shadow-lg">
+
+                  <div class="mb-md-2 mt-md-4 pb-1">
+
+                    <h1 class="fw-bold mb-2 text-uppercase">registrarme</h1>
+                    <div class="form-outline form-white mb-5">
+                      <label class="form-label" for="typeEmailX">Nombre</label>
+                      <input
+                        id="first_name"
+                        class="form-control form-control-lg mb-3"
+                        name="first_name" placeholder="Ingresa tu nombre"
+                      />
+                      <label class="form-label" for="typeEmailX">Apellido</label>
+                      <input
+                        id="last_name"
+                        class="form-control form-control-lg mb-3"
+                        name="last_name" placeholder="Ingresa tu apellido"
+                      />
+                      <label class="form-label" for="typeEmailX">Email</label>
+                      <input
+                        id="email"
+                        class="form-control form-control-lg mb-3"
+                        name="email" placeholder="Ingresa tu email" required="true"
+                      />
+                      <label class="form-label" for="typeEmailX">Edad</label>
+                      <input
+                        id="age"
+                        class="form-control form-control-lg mb-3"
+                        name="age" placeholder="Ingresa tu edad"
+                      />
+                      <label class="form-label" for="typeEmailX">Rol</label>
+                      <input
+                        id="role"
+                        class="form-control form-control-lg mb-3"
+                        name="role" placeholder="Ingresa admin/user"
+                      />
+                      <label class="form-label" for="typeEmailX">Contraseña</label>
+                      <input
+                        id="password"
+                        class="form-control form-control-lg mb-3"
+                        name="password" placeholder="Ingresa una clave"
+                        required="true"
+                      />
+                    </div>
+
+                    <div>
+                        <p class="mb-0">Ya tenes cuenta?
+                        <a
+                            href="/"
+                            class="text-white-50 fw-bold"
+                        >Ingresa aqui</a>
+                        </p>
+                    </div>
+
+                    <button
+                      class="button-login btn btn-outline-light btn-lg px-5 mt-3"
+                      type="submit"
+                    >Enviar</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+<script src="/js/register.js"></script>
