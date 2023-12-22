@@ -1,7 +1,7 @@
 import {cartService} from '../services/factory.js'
 import { devLogger } from '../config/logger_BASE.js';
 import productsModel from '../services/dao/db/models/products.js';
-
+import { emailPurchase } from './mailing.controller.js';
 
 
 
@@ -43,6 +43,7 @@ export const getCartId = async (req, res) => {
 export const cartPurchase = async (req, res) => {
     try {
         const products = req.body;
+        const productsUpdate = [];
 
         if (products.length === 0) {
             return res.status(400).send({ message: "La solicitud debe contener una lista de productos" });
@@ -64,20 +65,44 @@ export const cartPurchase = async (req, res) => {
             }
 
             product.stock -= quantityToPurchase;
-            await product.save();
-            
+            const productSave = await product.save();
+            productsUpdate.push(productSave);
         }
-        // Restar la cantidad comprada al stock en la base de datos
-        res.status(201).send({ message: "Productos comprados con éxito"});
 
+        function generateUniqueRandomNumber() {
+            return Math.floor(Math.random() * 10000);
+        }      
+
+        const calculateTotalAmount = (products) => {
+            const total = products.reduce((acc, product) => {
+                const price = parseFloat(product.price.split(' ')[1]); // Extraer el valor numérico del precio
+                const quantity = product.quantity;
+                return acc + (price * quantity); // Sumar el precio * cantidad al acumulador
+            }, 0);
+        
+            return total;
+        };
+        
+        const cartTicket = {
+            code: generateUniqueRandomNumber(),
+            purchase_datatime: new Date(),
+            amount: calculateTotalAmount(products),
+            purchaser: req.session.user.email,
+            products: products,
+        };
+
+        const generateTicket = await cartService.generateTicket(cartTicket)
+        emailPurchase();
+        
+        req.logger.info('Exito en generateTicket');
+
+        res.status(201).send({ message: "Productos comprados con éxito"});
+        
     } catch (error) {
         console.error('Error en cartPurchase:', error);
         res.status(500).send({ error: error, message: "Hubo un error en la operación" });
     }
 };
-
-
-
 
 export const postCart = async (req, res) => {
     const cartDto = (req.body)

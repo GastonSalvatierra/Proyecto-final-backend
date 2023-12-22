@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer';
 import config from '../config/config.js';
 import __dirname from '../utils.js'
 
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     port: 587,
@@ -62,6 +63,7 @@ const mailOptionsWithAttachments = {
 
 
 
+
 export const sendEmail = (req, res) => {
     try {
         transporter.sendMail(mailOptions, (error, info) => {
@@ -80,6 +82,10 @@ export const sendEmail = (req, res) => {
 }
 
 
+
+
+
+
 export const sendEmailWithAttachments = (req, res) => {
     try {
         transporter.sendMail(mailOptionsWithAttachments, (error, info) => {
@@ -95,4 +101,38 @@ export const sendEmailWithAttachments = (req, res) => {
         console.error(error);
         res.status(500).send({ error: error, message: "No se pudo enviar el email desde:" + config.gmailAccount });
     }
+}
+
+
+export const emailPurchase = ()=>{
+    const mailOptionsClient = {
+        from: 'Coder ' + config.gmailAccount,
+        to: config.gmailAccount, /**----PONER MAIL DEL USUARIO----**/
+        subject: "FELICIDADES REALIZASTE TU COMPRA CON EXITO",
+        html: `<div>
+            <h1>TU PEDIDO YA ESTA EN PREPARACION</h1>                    
+        </div>`,
+        attachments: []
+    };
+
+
+     const sendEmail2 = (req, res) => {
+        try {
+            transporter.sendMail(mailOptionsClient, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    res.status(400).send({ msg: "Error", payload: error })
+                }
+                
+                console.log('Message sent: %s', info.messageId);
+                res.send({ message: 'Success!', payload: info })
+            })
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({ error: error, message: "No se pudo enviar el email desde:" + config.gmailAccount });
+        }
+    }
+    sendEmail2();
+
+
 }
