@@ -1,2 +1,1 @@
-
-CAMBIAR Y AGREGAR BOTONES PARA CARGAR FOTO, DNI, CERTIFICADO DE DOMICILIO, ESTADO DE CUENTA.
+Entrega del proyecto final del curso de backend.
