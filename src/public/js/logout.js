@@ -143,7 +143,7 @@ if(localStorage.getItem('carrito')){
 
 const buttonFinal = document.querySelector('.btn-compra-final');
 buttonFinal.addEventListener('click', () => {
-    fetch('http://localhost:8080/api/carts/purchase', {
+    fetch('/api/carts/purchase', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -182,11 +182,11 @@ buttonFinal.addEventListener('click', () => {
 });
 
 document.getElementById('uploadFilesBtn').addEventListener('click', () => {
-    fetch('http://localhost:8080/api/users/userId') // Obtener el userId desde el servidor
+    fetch('/api/users/userId') // Obtener el userId desde el servidor
         .then(response => response.json())
         .then(data => {
             const userId = data.userId;
-            const url = `http://localhost:8080/api/users/${userId}/documents`;
+            const url = `/api/users/${userId}/documents`;
 
             // Verificar si los tres campos tienen archivos seleccionados
             const profileFile = document.getElementById('photo-dni').files[0];
@@ -215,7 +215,7 @@ document.getElementById('uploadFilesBtn').addEventListener('click', () => {
                     console.log(result); // Manejar la respuesta del servidor
 
                     // Cambiar el rol a "premium"
-                    const premiumUrl = `http://localhost:8080/api/users/premium/${userId}`;
+                    const premiumUrl = `/api/users/premium/${userId}`;
                     fetch(premiumUrl, {
                         method: 'GET',
                     })
