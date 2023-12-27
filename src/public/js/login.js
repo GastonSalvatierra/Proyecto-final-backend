@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = new FormData(form);
     const obj = {};
     data.forEach((value, key) => (obj[key] = value));
-    fetch("/api/session/login", {
+    fetch("https://proyecto-final-backend-production.up.railway.app/api/session/login", {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     }).then((result) => {
       if (result.status === 200) {
-        window.location.replace("/api/products/pages/1");
+        window.location.replace("https://proyecto-final-backend-production.up.railway.app/api/products/pages/1");
       } else if (result.status === 401) {
         alert("Credenciales inválidas o erróneas");
       }
