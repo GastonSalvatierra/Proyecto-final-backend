@@ -63,17 +63,6 @@ router.post('/clave-exitosa', async (req, res) => {
 
 })
 
-
-
-
-
-
-
-
-
-
-
-
 router.get('/:resultLink', async (req, res) => {
 
      const link = req.params.resultLink
@@ -90,14 +79,6 @@ router.get('/:resultLink', async (req, res) => {
     }
     
 });
-
-
-
-
-
-
-
-
 
 //validacion de link 
 
@@ -116,18 +97,7 @@ router.get('/:resultLink', async (req, res) => {
     }
 }); */
 
-
-
-
-
-
-
-
-
 export default router;
-
-
-
 
 /* export const userRegister = async (req, res) => {
     const { first_name, last_name, email, age, password, role, cart } = req.body;

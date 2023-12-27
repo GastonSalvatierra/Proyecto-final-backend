@@ -17,10 +17,6 @@ export const getCart = async (req, res) => {
     }
 }
 
-
-
-
-
 export const getCartId = async (req, res) => {
     try {
         let cartId = req.params.cid;
@@ -38,7 +34,6 @@ export const getCartId = async (req, res) => {
         res.status(500).send({error:  error, message: "No se pudo obtener el carrito."});
     }
 }
-
 
 export const cartPurchase = async (req, res) => {
     try {
@@ -122,10 +117,6 @@ export const postCart = async (req, res) => {
     }
 }
 
-
-
-
-
 export const deleteCart = async (req, res) => {
     const cartId = req.params.cid;
     const productId = req.params.pid;
@@ -143,10 +134,6 @@ export const deleteCart = async (req, res) => {
         res.status(500).send({error:  error, message: "No se pudo eliminar el carrito."});
     }
 }
-
-
-
-
 
 export const deleteCartId = async (req, res) => {
     const cartId = req.params.cid 
@@ -168,10 +155,6 @@ export const deleteCartId = async (req, res) => {
     }
 }
 
-
-
-
-
 export const putCart = async (req, res) => {
     const cartId = req.params.cid;
     const updateProducts = req.body;
@@ -192,10 +175,6 @@ export const putCart = async (req, res) => {
         res.status(500).send({error:  error, message: "No se pudo actualizar el carrito."});
     }
 }
-
-
-
-
 
 export const putCartPid = async (req, res) => {
    const cartId = req.params.cid;

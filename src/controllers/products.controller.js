@@ -33,19 +33,17 @@ export const getProductsLimit = async (req, res) => {
       }
 }
 
-
-
-
 export const getProductsPage = async (req, res) => {
     try {
         let page = parseInt(req.params.page) || 1;
         let user = await productServices.getName(req.session.user.email);
+        console.log(user.role);
 
         req.logger = devLogger;
         
         let products = await productServices.getPage(page);
         
-        if (req.session.user.role === 'user') {
+        if (user.role === 'user') {
           res.render('products', {
               isValid: true,
               user: user.first_name,
@@ -60,8 +58,7 @@ export const getProductsPage = async (req, res) => {
           });
       } else if (req.session.user.role === 'admin') {
           res.render('admin');
-      } else if (req.session.user.role === 'premium') {
-          // Lógica específica para el rol "premium"
+      } else if (user.role === 'premium') {
           res.render('premium-dashboard', {
             isValid: true,
             user: user.first_name,
@@ -101,10 +98,7 @@ export const logOut = async (req, res) => {
       });
 }
 
-
-
 //CORRESPONDE A LA ENTREGA ANTERIOR
-
 
 export const getProductsLimit10 = async (req, res) => {
     const limit = req.query.limit || 10;
@@ -118,9 +112,6 @@ export const getProductsLimit10 = async (req, res) => {
         res.status(500).send({message: "No se pudo obtener los estudiantes."});
     }
 }
-
-
-
 
 export const postProductsSave = async (req, res) => {
 
@@ -148,9 +139,6 @@ export const postProductsSave = async (req, res) => {
     }
 }
 
-
-
-
 export const putProducts = async (req, res) => {
   const productIdToUpdate = req.params.pid;
   const updateFields = req.body;
@@ -165,8 +153,6 @@ export const putProducts = async (req, res) => {
       res.status(500).send({ message: "No se pudo actualizar el producto." });
   }
 }
-
-
 
 export const deleteProducts = async (req, res) => {
     const deleteProductId = req.params.pid2;

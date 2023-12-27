@@ -12,7 +12,6 @@ let product;
 let cart;
 
 
-
 describe("----TEST DE SESION EN LA APP---", () => {
 
     //SECCION 1 - REGISTRO DE USUARIO
@@ -39,10 +38,6 @@ describe("----TEST DE SESION EN LA APP---", () => {
 
                 userMock = userResgister;
 
-
-
-                
-
                 //PARA LAS SIGUIENTES PRUEBAS COMENTAR ESTE FRAGMENTO DE CODIGO
 
                 //THEN
@@ -58,7 +53,6 @@ describe("----TEST DE SESION EN LA APP---", () => {
             })
 
         })
-
 
 
     //SECCION 2 - LOGIN DE USUARIO
@@ -78,13 +72,8 @@ describe("----TEST DE SESION EN LA APP---", () => {
                 expect (result.statusCode).is.be.ok
                 expect(result.body.message).to.equal("¡Primer logueo realizado! :)" );
                 
-            })
-            
-                
+            })               
         })
-
-
-
 
 
     //SECCION  - LOGOUT DE USUARIO
@@ -109,9 +98,6 @@ describe("----TEST DE SESION EN LA APP---", () => {
 
 });
 //ESTO YA ESTA OK 
-
-
-
 
 
 describe("----TEST DE CRUD EN LOS PRODUCTOS----", () => {
@@ -152,7 +138,6 @@ describe("----TEST DE CRUD EN LOS PRODUCTOS----", () => {
     })
 
 
-
 //SECCION 2 - ACTUALIZAR PRODUCTO
 
     describe("test para actualizar producto", () => {
@@ -187,10 +172,6 @@ describe("----TEST DE CRUD EN LOS PRODUCTOS----", () => {
             
     })
 
-
-
-
-
 //SECCION  - ELIMINAR PRODUCTO
 
     describe("test para eliminar un producto", () => {
@@ -217,17 +198,11 @@ describe("----TEST DE CRUD EN LOS PRODUCTOS----", () => {
 //ESTO YA ESTA OK 
 
 
-
-
-
 describe("----TEST DE CRUD EN EL CARRITO----", () => {
 
 //SECCION 1 - CREAR CARRITO
 
 describe("test de creacion de un carrito", () => {
-
-        
-
     it("Crear carrito: en este test verificamos si se crea un carrito de manera correcta.", async function () {
 
         //GIVEN
@@ -252,8 +227,6 @@ describe("test de creacion de un carrito", () => {
     })
 
 })
-
-
 
 //SECCION 2 - ACTUALIZAR CARRITO
 
@@ -283,13 +256,8 @@ it("Actualizar carrito: en este test verificamos que se actulice el carrito de m
         expect(result.body.message).to.equal('carrito actualizado con exito');
 
     })
-    
-        
+ 
 })
-
-
-
-
 
 //SECCION  - ELIMINAR PRODUCTO
 
@@ -312,11 +280,6 @@ describe("test para eliminar todos los productos del carrito", () => {
     
         
 })
-
-
-
-
-
 
 });
 //ESTO YA ESTA OK 

@@ -2,16 +2,28 @@ import { Router } from "express";
 const router= Router();
 import { uploader } from "../utils.js";
 import { changeRoleIfFilesExist } from "../controllers/user.controller.js";
+import userModel from "../services/dao/db/models/user.js";
 
+let User = userModel;
 // Ejemplo de cómo obtener el userId en el servidor
-router.get('/userId', (request, response) => {
-    const session = request.session;
+router.get('/userId', async(request, response) =>{
     
-    if (session && session.user && session.user.cart) {
-        const userId = session.user.cart;
+    if (request.session && request.session.user && request.session.user.cart) {
+        const userId = request.session.user.cart;
         response.json({ userId }); // Devolver el userId al cliente
     } else {
-        response.status(403).send('Usuario no autenticado');
+        const userEmail = request.session.user.email;
+        try {
+            const user = await User.findOne({ email: userEmail }); // Busca el usuario por su correo electrónico
+            if (user) {
+                const userId = user._id; // Obtiene el _id del usuario encontrado en la base de datos
+                response.json({ userId }); // Devuelve el userId al cliente
+            } else {
+                response.status(404).send('Usuario no encontrado');
+            }
+        } catch (error) {
+            response.status(500).send('Error al buscar el usuario en la base de datos');
+        }
     }
 });
 
