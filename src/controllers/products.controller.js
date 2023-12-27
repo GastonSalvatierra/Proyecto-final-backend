@@ -45,11 +45,28 @@ export const getProductsPage = async (req, res) => {
         
         let products = await productServices.getPage(page);
         
-        if (req.session.user.role !== 'admin') {
+        if (req.session.user.role === 'user') {
           res.render('products', {
+              isValid: true,
+              user: user.first_name,
+              email: user.email,
+              userRole: user.role,
+              docs: products.docs,
+              hasPrevPage: products.hasPrevPage,
+              prevLink: `/api/products/pages/${products.prevPage}`,
+              page: products.page,
+              hasNextPage: products.hasNextPage,
+              nextLink: `/api/products/pages/${products.nextPage}`
+          });
+      } else if (req.session.user.role === 'admin') {
+          res.render('admin');
+      } else if (req.session.user.role === 'premium') {
+          // Lógica específica para el rol "premium"
+          res.render('premium-dashboard', {
             isValid: true,
             user: user.first_name,
             email: user.email,
+            userRole: user.role,
             docs: products.docs,
             hasPrevPage: products.hasPrevPage,
             prevLink: `/api/products/pages/${products.prevPage}`,
@@ -57,9 +74,11 @@ export const getProductsPage = async (req, res) => {
             hasNextPage: products.hasNextPage,
             nextLink: `/api/products/pages/${products.nextPage}`
           });
-        }else{
-          res.render('admin');
-        } 
+      } else {
+          // Manejo de otros roles o situaciones
+          res.render('defaultView');
+      }
+      
         
       } catch (error) {
         req.logger.error('Esto es un error en getProductsPage');

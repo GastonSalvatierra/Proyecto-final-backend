@@ -51,7 +51,6 @@ export default {
 
 /* *****************npqs wbyh aiwu xarm******************* */
 
-
 // console.log("Options: ", program.opts());
 // console.log("Modo Opt: ", program.opts().mode);
 // console.log("Puerto Opt: ", program.opts().p);
