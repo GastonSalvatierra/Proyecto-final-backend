@@ -22,8 +22,8 @@ export default class productService{
 
         let result = await productsModel.paginate({}, { page, limit: 6, lean: true })
 
-        result.prevLink = result.hasPrevPage ? `http://localhost:8080/api/products/pages/${result.prevPage}` : '';
-        result.nextLink = result.hasNextPage ? `http://localhost:8080/api/products/pages/${result.nextPage}` : '';
+        result.prevLink = result.hasPrevPage ? `/api/products/pages/${result.prevPage}` : '';
+        result.nextLink = result.hasNextPage ? `/api/products/pages/${result.nextPage}` : '';
         result.isValid = !(page <= 0 || page > result.totalPages)
 
         return result;

@@ -26,7 +26,7 @@ function generarEnlaceConExpiracion() {
     
     const fechaExpiracion = new Date(ahora.getTime() + 60 * 60 * 1000);
     
-    const enlace = `http://localhost:8080/api/recupero/${fechaExpiracion.toISOString()}`;
+    const enlace = `https://proyecto-final-backend-production.up.railway.app/api/recupero/${fechaExpiracion.toISOString()}`;
 
     return enlace;
 }
